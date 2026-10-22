@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>لعبة الملائكة الكرام</title>
+    <style>
+        body { font-family: Tahoma, sans-serif; background: #f0f4f8; text-align: center; padding: 20px; }
+        .card { background: white; padding: 20px; margin: 15px auto; width: 60%; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        button { background: #007bff; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; margin: 5px; }
+        button:hover { background: #0056b3; }
+        .result { font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>🎮 تحدي الملائكة الكرام</h1>
+    <p>اختبر معلوماتك في أسماء الملائكة ووظائفهم</p>
+
+    <div class="card" id="q1">
+        <h3>1. الملك الموكل بالنفخ في الصور للإعلان عن القيامة؟</h3>
+        <button onclick="checkAnswer(1, 'ميكائيل', false)">ميكائيل</button>
+        <button onclick="checkAnswer(1, 'إسرافيل', true)">إسرافيل</button>
+        <button onclick="checkAnswer(1, 'جبريل', false)">جبريل</button>
+        <div class="result" id="res1"></div>
+    </div>
+
+    <div class="card" id="q2">
+        <h3>2. من هو أمين الوحي ونزول الوحي على الأنبياء؟</h3>
+        <button onclick="checkAnswer(2, 'جبريل', true)">جبريل</button>
+        <button onclick="checkAnswer(2, 'رضوان', false)">رضوان</button>
+        <button onclick="checkAnswer(2, 'مالك', false)">مالك</button>
+        <div class="result" id="res2"></div>
+    </div>
+
+    <script>
+        function checkAnswer(qNum, selected, isCorrect) {
+            const resElement = document.getElementById('res'+qNum);
+            if(isCorrect) {
+                resElement.style.color = 'green';
+                resElement.innerText = 'إجابة صحيحة! أحسنتِ 🌟';
+            } else {
+                resElement.style.color = 'red';
+                resElement.innerText = 'إجابة خاطئة، جربي مجدداً.';
+            }
+        }
+    </script>
+
+</body>
+</html>
